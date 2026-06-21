@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱游戏 · 产品说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #faf7f2;
+            font-family: 'Georgia', 'Times New Roman', 'Songti SC', 'SimSun', serif;
+            color: #3a3530;
+            line-height: 1.7;
+            padding: 2.5rem 1.2rem;
+        }
+
+        .page {
+            max-width: 780px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 28px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+            padding: 2.8rem 2.2rem;
+            transition: all 0.2s;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 1.2rem 0.8rem;
+            }
+            .page {
+                padding: 1.8rem 1.2rem;
+            }
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            color: #2d2822;
+            margin-bottom: 0.4rem;
+            position: relative;
+            display: inline-block;
+        }
+        h1::after {
+            content: '';
+            display: block;
+            width: 44px;
+            height: 3px;
+            background: #c8b69c;
+            margin-top: 10px;
+            border-radius: 4px;
+        }
+
+        .subhead {
+            font-size: 0.95rem;
+            color: #8a7f72;
+            margin-top: 0.2rem;
+            margin-bottom: 2.2rem;
+            font-style: italic;
+        }
+
+        .hero-note {
+            background: #f7f2ea;
+            padding: 1.6rem 2rem;
+            border-left: 6px solid #b8a691;
+            border-radius: 0 16px 16px 0;
+            margin: 1.8rem 0 2.4rem 0;
+        }
+        .hero-note p {
+            font-size: 1.05rem;
+        }
+        .hero-note strong {
+            color: #4f3f30;
+            font-weight: 600;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            font-weight: 450;
+            color: #3a3028;
+            margin-top: 2.4rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px dashed #dbd2c5;
+            padding-bottom: 0.4rem;
+        }
+
+        p {
+            margin-bottom: 1.3rem;
+            text-align: justify;
+        }
+
+        .highlight-box {
+            background-color: #f3efe8;
+            padding: 1.2rem 1.6rem;
+            border-radius: 14px;
+            margin: 1.6rem 0;
+            font-size: 0.95rem;
+            color: #3d352d;
+        }
+        .highlight-box em {
+            font-style: italic;
+            color: #7b6a57;
+        }
+
+        .feature-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin: 1.8rem 0;
+        }
+        .feature-item {
+            flex: 1 1 180px;
+            background: #faf7f2;
+            padding: 1.1rem 1.2rem;
+            border-radius: 18px;
+            transition: background 0.15s;
+        }
+        .feature-item h3 {
+            font-size: 1.05rem;
+            font-weight: 500;
+            color: #4c3f32;
+            margin-bottom: 0.3rem;
+        }
+        .feature-item p {
+            font-size: 0.9rem;
+            color: #5f554a;
+            margin-bottom: 0;
+        }
+
+        .scene-card {
+            background: #fffcf7;
+            border: 1px solid #e7ddd3;
+            padding: 1.2rem 1.6rem;
+            border-radius: 20px;
+            margin: 1.5rem 0;
+        }
+        .scene-card p {
+            margin-bottom: 0.3rem;
+        }
+        .scene-card .label {
+            display: inline-block;
+            background: #d6cabc;
+            color: #2d2822;
+            font-size: 0.75rem;
+            padding: 0.1rem 0.8rem;
+            border-radius: 20px;
+            letter-spacing: 0.04em;
+            margin-right: 0.5rem;
+        }
+
+        .faq-summary {
+            margin: 2rem 0 0.8rem 0;
+        }
+        .faq-item {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #ebe4da;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        .faq-q {
+            font-weight: 550;
+            color: #3f352c;
+            margin-bottom: 0.2rem;
+        }
+        .faq-a {
+            font-size: 0.92rem;
+            color: #655a4e;
+            padding-left: 0.8rem;
+        }
+
+        .btn-like {
+            display: inline-block;
+            background: transparent;
+            border: 1px solid #b8a691;
+            color: #4f3f30;
+            padding: 0.4rem 1.2rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            letter-spacing: 0.03em;
+            cursor: default;
+            transition: 0.1s;
+        }
+
+        .footnote {
+            margin-top: 2.8rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid #e3d9ce;
+            font-size: 0.85rem;
+            color: #7d6f5f;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .footnote a {
+            color: #5e4d3b;
+            text-decoration: none;
+            border-bottom: 1px dotted #b8a691;
+        }
+        .footnote a:hover {
+            color: #2f241b;
+            border-bottom: 1px solid #6d5a46;
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            color: #8a7a69;
+            background: #eee8e0;
+            padding: 0.1rem 0.6rem;
+            border-radius: 12px;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #e5dbcf;
+            margin: 1.4rem 0;
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <h1>爱游戏</h1>
+    <div class="subhead">一些值得再次打开的理由</div>
+
+    <div class="hero-note">
+        <p><strong>不只是偶然路过。</strong> 如果你曾被某个游戏片段触动，或是想找回一处熟悉的数字角落，<strong>爱游戏</strong> 始终在那里。它不追求喧嚣的登场，更在意每一次重逢的自然发生。</p>
+    </div>
+
+    <p>过去几个月里，我们留意到不少朋友在寻找一个更稳定、清晰的起点——不是短暂浏览，而是真正可以<strong>收藏、回访、持续关注</strong>的站点。恰好，这就是我们为 <a href="https://sitecn-i-game.com.cn">爱游戏</a> 设计产品时最先考虑的事。</p>
+
+    <h2>· 我们把它做成什么样子</h2>
+    <p>页面结构偏重“读”而非“刷”。每一屏内容都留有呼吸感，信息层级像文章段落一样自然展开。没有弹窗干扰，没有过量动态效果。你可以随时离开，下次回来依然能快速找到上次没读完的部分。</p>
+
+    <div class="highlight-box">
+        <em>“再次访问”</em> 不是事后补救的设计，而是从一开始就融入在版式里：固定但克制的导航记忆、不随时间折叠的归档区、以及始终可用的收藏入口。
+    </div>
+
+    <h2>· 三个值得留意的特点</h2>
+    <div class="feature-grid">
+        <div class="feature-item">
+            <h3>叙述式目录</h3>
+            <p>每个板块间有前后句关联，像翻页一样自然，而不是并列的卡片堆叠。</p>
+        </div>
+        <div class="feature-item">
+            <h3>低调的提示</h3>
+            <p>使用浅色引用块和分隔符引导视线，不靠高亮色块抢夺注意力。</p>
+        </div>
+        <div class="feature-item">
+            <h3>书签友好</h3>
+            <p>页面内锚点标题语义清晰，浏览器收藏夹里显示为有辨识度的名称。</p>
+        </div>
+    </div>
+
+    <h2>· 哪些场景下你可能会用到它</h2>
+    <div class="scene-card">
+        <p><span class="label">场景一</span> 周末想找一款氛围合适的游戏，又不想被算法推荐牵着走。</p>
+        <p><span class="label">场景二</span> 整理浏览器书签时，发现某个旧链接已经失效——你想起还有 <a href="https://sitecn-i-game.com.cn">爱游戏</a> 这个稳定的索引。</p>
+        <p><span class="label">场景三</span> 和身边人聊起某类游戏玩法，你打算把链接分享过去，而不只是口头描述。</p>
+    </div>
+
+    <p>所有这些场景的前提都是：<strong>站点本身保持简洁、可信、持续更新</strong>。我们不会为了留存率而添加不必要的登录或通知，也不会让广告改变页面本身的阅读节奏。</p>
+
+    <h2>· 一些你可能想问的</h2>
+    <div class="faq-summary">
+        <div class="faq-item">
+            <div class="faq-q">— 需要注册或登录才能使用吗？</div>
+            <div class="faq-a">不需要。当前版本所有内容均可直接浏览，收藏功能依赖浏览器自身。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">— 内容多久更新一次？</div>
+            <div class="faq-a">大致保持每周有新的结构或推荐，但不会频繁到打扰老访客。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">— 我怎样把它放在最常访问的位置？</div>
+            <div class="faq-a">在浏览器地址栏右侧点击星形图标，或使用快捷键 Ctrl+D（Mac：⌘D）添加书签。地址就是 <a href="https://sitecn-i-game.com.cn">爱游戏</a> 本身，简单直接。</div>
+        </div>
+    </div>
+
+    <hr>
+
+    <p style="font-size: 0.95rem; margin-top: 0.2rem;">如果你已经熟悉这个站点，可以直接把当前页加入书签。如果你只是第一次点进来，不妨停留片刻，看看内容是否合你的口味。</p>
+
+    <div class="footnote">
+        <span>© 2025 · 爱游戏</span>
+        <span><span class="tag">产品说明</span> <span class="tag">收藏友好</span></span>
+        <span style="font-style: italic;">再次访问 · 不必迟疑</span>
+    </div>
+
+</div>
+</body>
+</html>
