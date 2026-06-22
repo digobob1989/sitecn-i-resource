@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>竞彩网 · 从一场比赛开始</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f5f3f0;
+            color: #1f1f1f;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* 深色头图 —— 故事开场 */
+        .hero {
+            background: #0d0e13;
+            background-image: radial-gradient(circle at 15% 30%, #1f232f 0%, #0b0c10 90%);
+            padding: 5.5rem 1.8rem 4rem;
+            text-align: center;
+            color: #e6e3dd;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #b7a88b, transparent);
+        }
+
+        .hero p:first-child {
+            font-size: 1rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #9f937b;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+            margin: 0.3rem 0;
+            color: #f0ede6;
+        }
+
+        .hero .tagline {
+            font-size: 1.1rem;
+            color: #b1aa9a;
+            max-width: 480px;
+            margin: 0.8rem auto 0;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        /* 浅色正文区 */
+        .content {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 3rem 1.8rem 4rem;
+        }
+
+        .section-intro {
+            font-size: 1.05rem;
+            margin-bottom: 2.4rem;
+            border-left: 3px solid #b7a88b;
+            padding-left: 1.4rem;
+            color: #3a3732;
+        }
+
+        .section-intro strong {
+            color: #1f1b16;
+        }
+
+        /* 特点列表 (故事感) */
+        .feature-list {
+            list-style: none;
+            margin: 2.6rem 0;
+            display: flex;
+            flex-direction: column;
+            gap: 1.6rem;
+        }
+
+        .feature-list li {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 1.4rem 1.8rem;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.04), 0 1px 3px rgba(0,0,0,0.03);
+            transition: box-shadow 0.2s;
+            border: 1px solid #efebe6;
+        }
+
+        .feature-list li:hover {
+            box-shadow: 0 8px 22px rgba(0,0,0,0.06);
+        }
+
+        .feature-list li span {
+            display: block;
+            font-size: 0.8rem;
+            color: #b7a88b;
+            letter-spacing: 0.08em;
+            margin-bottom: 0.2rem;
+            font-weight: 500;
+        }
+
+        .feature-list li p {
+            color: #2e2b26;
+            font-size: 1rem;
+        }
+
+        /* 场景段落 */
+        .scene {
+            margin: 2.8rem 0 2.4rem;
+            background: #faf9f7;
+            padding: 1.8rem 2rem;
+            border-radius: 24px;
+            border: 1px solid #e6e0d8;
+        }
+
+        .scene h3 {
+            font-weight: 450;
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+            color: #2b2620;
+        }
+
+        .scene p {
+            color: #44403a;
+        }
+
+        .scene a {
+            color: #7a6b54;
+            text-decoration: none;
+            border-bottom: 1px solid #d4c9bb;
+            transition: color 0.2s, border-color 0.2s;
+        }
+
+        .scene a:hover {
+            color: #3d342a;
+            border-bottom-color: #7a6b54;
+        }
+
+        /* FAQ 摘要 —— 温和收束 */
+        .faq-summary {
+            margin-top: 3rem;
+            border-top: 1px solid #e2dbd1;
+            padding-top: 2.2rem;
+        }
+
+        .faq-item {
+            margin-bottom: 1.3rem;
+        }
+
+        .faq-item .q {
+            font-weight: 500;
+            color: #2b2620;
+            margin-bottom: 0.2rem;
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .faq-item .q::before {
+            content: '▹';
+            color: #b7a88b;
+        }
+
+        .faq-item .a {
+            color: #4d4841;
+            padding-left: 1.5rem;
+            font-size: 0.97rem;
+        }
+
+        .faq-item .a a {
+            color: #7a6b54;
+            text-decoration: none;
+            border-bottom: 1px solid #d4c9bb;
+            transition: color 0.2s;
+        }
+
+        .faq-item .a a:hover {
+            color: #3d342a;
+            border-bottom-color: #7a6b54;
+        }
+
+        /* 温和结尾 */
+        .closing {
+            margin: 3rem 0 1rem;
+            text-align: center;
+            font-size: 0.95rem;
+            color: #6b655b;
+            border-top: 1px solid #e2dbd1;
+            padding-top: 2.5rem;
+            letter-spacing: 0.02em;
+        }
+
+        .closing span {
+            display: inline-block;
+            background: #eae5dd;
+            padding: 0.2rem 1rem;
+            border-radius: 40px;
+            color: #3a342c;
+            font-size: 0.85rem;
+        }
+
+        /* 响应式细节 */
+        @media (max-width: 640px) {
+            .hero {
+                padding: 3.8rem 1.2rem 3rem;
+            }
+
+            .hero h1 {
+                font-size: 1.9rem;
+            }
+
+            .hero .tagline {
+                font-size: 0.98rem;
+            }
+
+            .content {
+                padding: 2rem 1.2rem 3rem;
+            }
+
+            .feature-list li {
+                padding: 1.1rem 1.2rem;
+            }
+
+            .scene {
+                padding: 1.3rem 1.2rem;
+            }
+
+            .faq-item .a {
+                padding-left: 1.2rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 开场短句：深色头图 -->
+    <div class="hero">
+        <p>◈ 一个页面，一场开始</p>
+        <h1>从一场比赛<br>看清一片风景</h1>
+        <div class="tagline">你想快速知道一个体育资讯站点的核心用途——<br>它不绕弯，把信息摆在你面前。</div>
+    </div>
+
+    <!-- 正文区：承接 + 特点 + 场景 + FAQ 摘要 + 温和结尾 -->
+    <div class="content">
+
+        <!-- 承接段落 -->
+        <div class="section-intro">
+            <strong>打开一个站点，三秒内应该读懂它。</strong> 如果你正好奇「竞彩网」到底是做什么的，答案其实很简单：它围绕足球、篮球等赛事，提供比分、赛程、数据以及相关的赛事参考。没有复杂的包装，也没有故弄玄虚的营销话术。
+        </div>
+
+        <!-- 特点列表 (故事式口吻，自然列举) -->
+        <ul class="feature-list">
+            <li>
+                <span>01</span>
+                <p><strong>赛程与比分，一眼可见。</strong> 不用翻几个页面才能找到今天有哪些比赛。首页就把焦点赛事、实时比分整理清楚，节省时间。</p>
+            </li>
+            <li>
+                <span>02</span>
+                <p><strong>数据背景，而不是预测玄学。</strong> 每场比赛都附有近期战绩、历史交锋等基础数据，帮助你形成自己的判断，而不是塞给你某个“必中”结论。</p>
+            </li>
+            <li>
+                <span>03</span>
+                <p><strong>信息结构克制，不堆广告。</strong> 页面排版干净，重点内容突出，没有铺天盖地的弹窗或浮层。你可以专注在比赛本身。</p>
+            </li>
+        </ul>
+
+        <!-- 场景段落 + 自然嵌入链接 -->
+        <div class="scene">
+            <h3>一个日常场景</h3>
+            <p>周六晚上，你打开手机想看看明早有哪些五大联赛的场次，顺便回顾一下主队最近五场的得失球。打开 <a href="https://svip-jcw.com">竞彩网</a>，赛程按时间排列，点进一场比赛就能看到双方近况和交手记录。整个过程没有多余的注册提示，也没有要求你下载 App。看完关掉，继续做自己的事。网站就静静地在那里，等你下次需要。</p>
+            <p style="margin-top: 0.6rem; font-size: 0.92rem; color: #6b655b;">—— 它不拽着你“留在这里”，只是把信息准备好。</p>
+        </div>
+
+        <!-- FAQ 摘要（温和收束，带链接） -->
+        <div class="faq-summary">
+            <div class="faq-item">
+                <div class="q">需要注册才能看比分吗？</div>
+                <div class="a">不用。绝大多数内容直接可见。部分深度功能或许需要登录，但浏览赛程和基础数据完全开放。</div>
+            </div>
+            <div class="faq-item">
+                <div class="q">数据更新及时吗？</div>
+                <div class="a">一般比赛结束后数分钟内比分和基础统计就会同步。如果你追求极速的文字直播，<a href="https://svip-jcw.com">竞彩网</a> 也提供实时更新模块。</div>
+            </div>
+            <div class="faq-item">
+                <div class="q">手机上看体验如何？</div>
+                <div class="a">自适应布局，文字大小和间距在手机上同样舒适。没有左右滑动才能看全的表格。</div>
+            </div>
+        </div>
+
+        <!-- 温和结尾 -->
+        <div class="closing">
+            <span>没有诱导，没有浮夸 —— 一个安静提供赛事资讯的站点。</span>
+        </div>
+
+    </div>
+
+</body>
+</html>
