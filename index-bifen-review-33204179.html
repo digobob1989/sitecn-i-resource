@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>比分网 · 信息索引</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #fafafa;
+            color: #1e1e1e;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            padding: 2rem 1.2rem;
+        }
+
+        .wrapper {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* hero 头区 ———— 目录感入口 */
+        .hero {
+            padding: 2.5rem 0 1.8rem;
+            border-bottom: 1px solid #e2e2e2;
+            margin-bottom: 2.2rem;
+        }
+
+        .hero h1 {
+            font-size: 2.1rem;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            color: #111;
+            margin-bottom: 0.3rem;
+        }
+
+        .hero .sub {
+            font-size: 0.95rem;
+            color: #6f6f6f;
+        }
+
+        /* 目录卡片网格 ———— 知识库入口感 */
+        .index-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem 1.2rem;
+            margin: 2rem 0 2.6rem;
+        }
+
+        .index-card {
+            background: white;
+            border: 1px solid #eaeaea;
+            border-radius: 12px;
+            padding: 1.2rem 1rem 1rem;
+            transition: box-shadow 0.2s;
+        }
+
+        .index-card:hover {
+            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+            border-color: #ccc;
+        }
+
+        .index-card .tag {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: #949494;
+            margin-bottom: 0.2rem;
+        }
+
+        .index-card h3 {
+            font-weight: 500;
+            font-size: 1.05rem;
+            margin-bottom: 0.4rem;
+            color: #222;
+        }
+
+        .index-card p {
+            font-size: 0.88rem;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        /* 说明区 ———— 温和介绍 */
+        .section {
+            margin: 2.2rem 0;
+        }
+
+        .section h2 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #1a1a1a;
+            border-left: 3px solid #aaa;
+            padding-left: 0.7rem;
+            margin-bottom: 0.9rem;
+        }
+
+        .section p {
+            margin-bottom: 0.9rem;
+            color: #3a3a3a;
+        }
+
+        /* 提示区 ———— 简约边框 */
+        .tip-box {
+            background: #f3f3f3;
+            border-radius: 10px;
+            padding: 1.2rem 1.3rem;
+            margin: 2rem 0 1.8rem;
+            font-size: 0.92rem;
+            color: #2e2e2e;
+            border-left: 3px solid #b0b0b0;
+        }
+
+        .tip-box strong {
+            font-weight: 500;
+            color: #111;
+        }
+
+        /* 相关信息区 ———— 问答摘要风格 */
+        .faq-item {
+            border-bottom: 1px solid #e8e8e8;
+            padding: 0.85rem 0;
+        }
+
+        .faq-item:last-of-type {
+            border-bottom: none;
+        }
+
+        .faq-q {
+            font-weight: 500;
+            color: #222;
+            margin-bottom: 0.2rem;
+            font-size: 0.98rem;
+        }
+
+        .faq-a {
+            font-size: 0.9rem;
+            color: #4f4f4f;
+        }
+
+        .faq-a a {
+            color: #2a2a2a;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            text-decoration-color: #c0c0c0;
+            transition: text-decoration-color 0.2s;
+        }
+
+        .faq-a a:hover {
+            text-decoration-color: #111;
+        }
+
+        /* 脚注 */
+        .footnote {
+            margin-top: 3rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid #dfdfdf;
+            font-size: 0.8rem;
+            color: #8b8b8b;
+        }
+
+        /* 响应式 */
+        @media (max-width: 480px) {
+            .index-grid {
+                grid-template-columns: 1fr;
+                gap: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+
+            body {
+                padding: 1.4rem 1rem;
+            }
+        }
+
+        /* 保持窄排版 */
+        a {
+            color: inherit;
+        }
+
+    </style>
+</head>
+<body>
+<div class="wrapper">
+
+    <div class="hero">
+        <h1>比分网 · 知识库</h1>
+        <div class="sub">比分数据 · 赛事索引 · 信息入口</div>
+    </div>
+
+    <!-- 目录感卡片布局：四个方向 -->
+    <div class="index-grid">
+        <div class="index-card">
+            <div class="tag">⚽ 实时</div>
+            <h3>即时比分</h3>
+            <p>覆盖足球、篮球等主流赛事，分钟级更新。</p>
+        </div>
+        <div class="index-card">
+            <div class="tag">📅 赛程</div>
+            <h3>比赛日历</h3>
+            <p>周度、月度赛历，提前了解对阵安排。</p>
+        </div>
+        <div class="index-card">
+            <div class="tag">📊 数据</div>
+            <h3>统计对比</h3>
+            <p>积分、战绩、交锋记录，辅助观赛参考。</p>
+        </div>
+        <div class="index-card">
+            <div class="tag">🔍 检索</div>
+            <h3>联赛/球队</h3>
+            <p>按名称或联赛快速筛选，精准定位。</p>
+        </div>
+    </div>
+
+    <!-- 说明区：主题展开 -->
+    <div class="section">
+        <h2>关于比分信息</h2>
+        <p>比分不仅是赛果的简单罗列，更是一扇窗口，连接着赛事进程、球队状态与观赛体验。在中文互联网里，<a href="https://index-bifen.com">比分网</a>作为一类信息聚合点，常被用来快速获取正在进行的比赛分数、已结束场次的最终结果，以及未来赛程的预告。</p>
+        <p>不同的人关注比分的角度有所不同：有人追踪联赛积分榜的细微变化，有人留意杯赛的晋级形势，也有人只是想知道自己支持的队伍是否领先。比分网站的存在，便是为了提供一条低门槛的信息路径。</p>
+    </div>
+
+    <!-- 提示区 -->
+    <div class="tip-box">
+        <strong>💡 使用提示</strong> · 比分数据通常来自赛事官方或授权合作方，更新速度与数据源有关。如需获取最准确的实时信息，建议同时关注赛事直播或权威体育媒体。本站仅作索引参考，不直接提供视频流或博彩服务。
+    </div>
+
+    <!-- 相关信息区：FAQ 摘要风格 -->
+    <div class="section">
+        <h2>常见疑问</h2>
+
+        <div class="faq-item">
+            <div class="faq-q">比分网上的数据来自哪里？</div>
+            <div class="faq-a">多源于合作数据接口、公共体育统计平台，以及部分赛事官方渠道。不同联赛的覆盖程度可能略有差异。</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">是否包含所有运动项目？</div>
+            <div class="faq-a">主要覆盖足球、篮球、网球等关注度较高的项目，具体列表可参考 <a href="https://index-bifen.com">比分网</a> 的分类导航。更多小众赛事可能会逐步加入。</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">历史比赛记录能查多久以前的？</div>
+            <div class="faq-a">通常保留近几个赛季的数据，更早的记录可能需通过其他专业统计站点回溯。页面内提供按赛季或日期筛选的功能。</div>
+        </div>
+    </div>
+
+    <div class="footnote">
+        信息索引页面 · 内容仅供参考 · 数据时效请以实时页面为准
+    </div>
+
+</div>
+</body>
+</html>
